@@ -5,10 +5,10 @@
 defmodule MishkaCmsAuthGitHubTest do
   use ExUnit.Case, async: true
 
-  test "is a sign-in provider for the core's github strategy" do
+  test "is a sign-in provider Assent speaks to" do
     assert MishkaCmsCore.Accounts.SignInProvider in behaviours(MishkaCmsAuthGitHub)
     assert MishkaCmsAuthGitHub.id() == "github"
-    assert MishkaCmsAuthGitHub.strategy() == :github
+    assert %{assent: Assent.Strategy.Github} = MishkaCmsAuthGitHub.oauth()
     assert MishkaCmsAuthGitHub.label() == "GitHub"
     assert %{path: "M" <> _, color: "text-" <> _} = MishkaCmsAuthGitHub.icon()
   end

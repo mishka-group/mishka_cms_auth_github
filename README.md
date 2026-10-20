@@ -16,7 +16,7 @@ Run `mix deps.get` and restart. The package registers itself with Mishka CMS thr
 ## Set up
 
 1. Make the app at GitHub → Settings → Developer settings → **OAuth Apps → New OAuth App**.
-2. Authorization callback URL: `https://<your-site>/api/auth/user/github/callback`
+2. Authorization callback URL: `https://<your-site>/api/auth/user/provider/callback`
 3. In Mishka CMS: **Settings → Security → Sign-in methods** → switch **GitHub** on. Paste the
    **Client ID** and **Client secret** into the fields that open under it, then **Save**.
 

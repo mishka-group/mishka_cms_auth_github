@@ -8,20 +8,22 @@ defmodule MishkaCmsAuthGitHub do
   started by `MishkaCmsAuthGitHub.Application`: installed, it adds GitHub to every site's Security tab →
   Sign-in methods, where each site switches it on and sets its keys.
 
-  Signing in with a GitHub account: the `github` strategy on `MishkaCmsCore.Accounts.User`, with an
-  OAuth app made under GitHub → Settings → Developer settings → OAuth Apps. Its authorization
-  callback URL is the site's `MishkaCmsCore.Accounts.SignInProvider.callback_url/2`. The account's
-  primary email is the one used, and only when GitHub says it is verified.
+  Signing in with a GitHub account: `Assent.Strategy.Github` through the core's one provider
+  strategy, with an OAuth app made under GitHub → Settings → Developer settings → OAuth Apps. Its
+  authorization callback URL is the site's `MishkaCmsCore.Accounts.SignInProvider.callback_url/1`.
+  The account's primary email is the one used, and only when GitHub says it is verified.
   """
 
   use MishkaCmsCore.Accounts.SignInProvider,
     id: "github",
-    strategy: :github,
     label: gettext_noop("GitHub"),
     priority: 20
 
   @client_id "auth.providers.github.client_id"
   @client_secret "auth.providers.github.client_secret"
+
+  @impl true
+  def oauth, do: %{assent: Assent.Strategy.Github}
 
   @impl true
   def icon,
@@ -37,7 +39,7 @@ defmodule MishkaCmsAuthGitHub do
       key(@client_id, gettext_noop("GitHub client ID"),
         description:
           gettext_noop(
-            "From the OAuth app made for this site in GitHub's developer settings. Its redirect address is this site's address followed by /api/auth/user/github/callback."
+            "From the OAuth app made for this site in GitHub's developer settings. Its redirect address is this site's address followed by /api/auth/user/provider/callback."
           )
       ),
       key(@client_secret, :secret, gettext_noop("GitHub client secret"),
