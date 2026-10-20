@@ -8,7 +8,7 @@ defmodule MishkaCmsAuthGitHubTest do
   test "is a sign-in provider Assent speaks to" do
     assert MishkaCmsCore.Accounts.SignInProvider in behaviours(MishkaCmsAuthGitHub)
     assert MishkaCmsAuthGitHub.id() == "github"
-    assert %{assent: Assent.Strategy.Github} = MishkaCmsAuthGitHub.oauth()
+    assert %{assent: Assent.Strategy.Github, code_verifier: true} = MishkaCmsAuthGitHub.oauth()
     assert MishkaCmsAuthGitHub.label() == "GitHub"
     assert %{path: "M" <> _, color: "text-" <> _} = MishkaCmsAuthGitHub.icon()
   end

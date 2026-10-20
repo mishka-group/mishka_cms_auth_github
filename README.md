@@ -28,6 +28,7 @@ The GitHub button now shows on the sign-in and registration pages.
 - Links to an existing confirmed account with the same email, and claims one nobody confirmed.
 - Makes a new account only while the site allows it, and never makes a master.
 - Asks for the authenticator code when the account has two-step sign-in.
+- Uses PKCE (S256) on top of the state check.
 - Keeps none of GitHub's tokens.
 
 ## License

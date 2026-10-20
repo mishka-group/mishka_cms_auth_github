@@ -22,8 +22,9 @@ defmodule MishkaCmsAuthGitHub do
   @client_id "auth.providers.github.client_id"
   @client_secret "auth.providers.github.client_secret"
 
+  # PKCE on top of the state check: GitHub has taken S256 since July 2025.
   @impl true
-  def oauth, do: %{assent: Assent.Strategy.Github}
+  def oauth, do: %{assent: Assent.Strategy.Github, code_verifier: true}
 
   @impl true
   def icon,
