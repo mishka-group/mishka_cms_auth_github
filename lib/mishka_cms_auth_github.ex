@@ -5,7 +5,7 @@
 defmodule MishkaCmsAuthGitHub do
   @moduledoc """
   A `mishka_installer` plugin on `"auth:providers"` (`MishkaCmsCore.Accounts.SignInProvider`),
-  started by `MishkaCmsAuthGitHub.Application`: installed, it adds GitHub to every site's Security tab →
+  started by MishkaCmsAuthGitHub.Application: installed, it adds GitHub to every site's Security tab →
   Sign-in methods, where each site switches it on and sets its keys.
 
   Signing in with a GitHub account: `Assent.Strategy.Github` through the core's one provider
