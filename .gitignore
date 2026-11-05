@@ -22,3 +22,4 @@ mishka_cms_auth_github-*.tar
 # Temporary files, for example, from tests.
 /tmp/
 
+.DS_Store
