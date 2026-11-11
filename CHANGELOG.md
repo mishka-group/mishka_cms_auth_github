@@ -3,7 +3,7 @@
 - Needs mishka_cms_core 0.0.5-alpha.4 and mishka_gervaz 0.0.4, where it needed 0.0.4 and 0.0.3
 - Every dependency is at its latest release, including ash 3.37.3, ash_authentication 5.0.0-rc.16, mishka_installer 0.1.16 and guarded_struct 0.1.6
 - `mix hex.audit` and `mix deps.audit` report no security advisories or retired packages
-- Needs mishka_cms_core 0.0.5-alpha.12, where a page's event, info and state handlers keep their code signature with `CODE_SIGNING_KEY` set. Every dependency is at its latest release, including ash 3.37.4 and spark 2.7.10
+- Needs mishka_cms_core 0.0.5-alpha.13 (a page's event, info and state handlers keep their code signature with `CODE_SIGNING_KEY` set), mishka_gervaz 0.0.8 and guarded_struct 0.1.7. Every dependency is at its latest release, including ash 3.37.4 and spark 2.7.10
 
 # Changelog for MishkaCmsAuthGitHub 0.0.2
 
